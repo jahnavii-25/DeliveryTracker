@@ -1,50 +1,346 @@
-# Welcome to your Expo app 👋
+# 🚚 DeliveryTracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native delivery management application built using Expo, TypeScript, Zustand, AsyncStorage, Leaflet, and OpenStreetMap.
 
-## Get started
+The application simulates a real-world logistics system where drivers manage deliveries and managers monitor delivery progress and vehicle locations in real time.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+# 📱 Features
 
-2. Start the app
+## Authentication
 
-   ```bash
-   npx expo start
-   ```
+* Driver Login
+* Manager Login
+* Session Persistence using AsyncStorage
+* Logout Functionality
+* Role-Based Navigation
 
-In the output, you'll find options to open the app in a
+### Demo Credentials
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+#### Driver Account
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Email:
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+driver@test.com
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Password:
 
-## Learn more
+```text
+123456
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+#### Manager Account
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Email:
 
-## Join the community
+```text
+manager@test.com
+```
 
-Join our community of developers creating universal apps.
+Password:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```text
+123456
+```
+
+---
+
+# 🚛 Driver Features
+
+* View Assigned Orders
+* Accept Orders
+* Mark Orders as Picked Up
+* Mark Orders as In Transit
+* Mark Orders as Delivered
+* Simulate Truck Movement
+* Start Automatic Tracking
+* Stop Automatic Tracking
+
+---
+
+# 📊 Manager Features
+
+* View All Orders
+* Monitor Delivery Status Updates
+* Track Vehicle Location
+* View Live Truck Position on Map
+* Monitor Tracking State
+
+---
+
+# 🗺️ Live Tracking System
+
+The application includes a delivery tracking simulation system.
+
+### Tracking Flow
+
+Driver Action
+
+↓
+
+Location Update
+
+↓
+
+Zustand Global Store
+
+↓
+
+Manager Dashboard
+
+↓
+
+Leaflet Map
+
+↓
+
+Vehicle Marker Updates
+
+### Technologies Used
+
+* React Native WebView
+* Leaflet
+* OpenStreetMap
+* Zustand State Management
+
+---
+
+# 🏗️ Project Architecture
+
+```text
+Driver Dashboard
+       ↓
+Tracking Service
+       ↓
+Zustand Store
+       ↓
+Manager Dashboard
+       ↓
+Tracking Map
+       ↓
+Leaflet + OpenStreetMap
+```
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+* React Native
+* Expo
+* TypeScript
+
+## State Management
+
+* Zustand
+
+## Data Persistence
+
+* AsyncStorage
+
+## Maps
+
+* Leaflet
+* OpenStreetMap
+* React Native WebView
+
+## UI Components
+
+* React Native Components
+* Expo Router
+
+---
+
+# 📂 Project Structure
+
+```text
+DeliveryTracker
+│
+├── app
+│   ├── login.tsx
+│   ├── driver
+│   └── manager
+│
+├── components
+│   ├── Header.tsx
+│   ├── OrderCard.tsx
+│   └── TrackingMap.tsx
+│
+├── store
+│   ├── useAuthStore.ts
+│   └── useDeliveryStore.ts
+│
+├── services
+│   └── trackingSimulator.ts
+│
+├── data
+│   ├── users.ts
+│   └── orders.ts
+│
+├── types
+│   ├── user.ts
+│   └── order.ts
+│
+└── assets
+```
+
+---
+
+# 🚀 Installation
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/jahnavii-25/DeliveryTracker.git
+```
+
+```bash
+cd DeliveryTracker
+```
+
+---
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3. Start Development Server
+
+```bash
+npx expo start
+```
+
+---
+
+# 📱 Running on Android Using Expo Go
+
+## Step 1
+
+Install Expo Go from Google Play Store:
+
+https://play.google.com/store/apps/details?id=host.exp.exponent
+
+---
+
+## Step 2
+
+Start the project:
+
+```bash
+npx expo start
+```
+
+---
+
+## Step 3
+
+A QR Code will appear in the terminal:
+
+```text
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▀▄█▀ ██  █ ▄▄▄▄▄ █
+█ █   █ █▄   ▄█▄▄██ █   █ █
+█ █▄▄▄█ █ ▀█▀█▄▀ ▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ ▀▄█ █ ▀ █▄▄▄▄▄▄▄█
+```
+
+---
+
+## Step 4
+
+Open Expo Go on your Android device.
+
+Tap:
+
+```text
+Scan QR Code
+```
+
+Scan the QR code displayed in the terminal.
+
+---
+
+## Step 5
+
+The application will automatically load on the device.
+
+Make sure:
+
+* Phone and PC are connected to the same Wi-Fi network.
+* Metro Bundler is running.
+
+---
+
+# 🔄 Testing Delivery Tracking
+
+## Driver Workflow
+
+1. Login as Driver
+2. Accept an Order
+3. Mark Order as Picked Up
+4. Mark Order as In Transit
+5. Start Auto Tracking
+
+---
+
+## Manager Workflow
+
+1. Login as Manager
+2. Open Manager Dashboard
+3. View Order Status Updates
+4. Observe Vehicle Marker on Map
+5. Monitor Live Tracking
+
+---
+
+# 💾 Persistence
+
+The application uses:
+
+* AsyncStorage
+* Zustand Persist Middleware
+
+Persisted Data:
+
+* User Session
+* Orders
+* Delivery Statuses
+* Tracking State
+* Vehicle Coordinates
+
+---
+
+# 🔮 Future Enhancements
+
+* Real GPS Tracking using expo-location
+* Push Notifications
+* Backend API Integration
+* WebSocket-Based Real-Time Tracking
+* Driver Assignment System
+* Delivery Analytics Dashboard
+* Delivery History
+* Cloud Database Integration
+
+---
+
+# 👩‍💻 Author
+
+Jahnavi Tiwari
+
+GitHub:
+
+https://github.com/jahnavii-25
+
+---
+
+# 📄 License
+
+This project was developed for learning, portfolio, and academic demonstration purposes.
