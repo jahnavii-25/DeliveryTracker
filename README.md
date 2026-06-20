@@ -37,7 +37,7 @@ Password:
 Email:
 
 ```text
-manager@test.com
+ops@test.com
 ```
 
 Password:
